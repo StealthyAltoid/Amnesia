@@ -10,9 +10,9 @@ public class Room2 extends Room
 		roomItems2.add("note4");
 	}
         public int Enter(){
-            toString();
             System.out.println("");
-            System.out.println("Options...");
+            System.out.println("Options:" + "\n" + "1)Search the boxes" + "\n" + "2)Take the Stairs" + "\n" +
+            	"3)Leave" + "\n" + "4)Inventory");
             num = keyboard.nextInt();
             return num;
         }
@@ -22,7 +22,15 @@ public class Room2 extends Room
             Room1 room_1 = new Room1(1);
             hall.Enter(room_2, room_3, room_1);
         }
-	
+	public void takeNote()
+    {
+    	roomItems2.remove(0);
+    }
+    public int getSize()
+    {
+    	return roomItems2.size();
+    }
+
 	public String toString()
 	{
 		String str = "";
@@ -30,8 +38,7 @@ public class Room2 extends Room
 			{
 				str = "There's nothing here except a few moving boxes. At one end though, you notice a" + "\n" +
 					  "staircase that goes down." + "\n" + "\n" +
-					  super.toString() + "\n" + 
-					  "Room Items: " +  roomItems2.get(i);
+					  super.toString() + "\n";
 			}
 		return str;
 	}
