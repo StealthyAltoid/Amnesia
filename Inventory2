@@ -1,0 +1,40 @@
+import java.util.*;
+public class Inventory {
+    private ArrayList<Item> playerItems = new ArrayList<>();
+    public Inventory(){
+    }
+    
+    public void printInventory(){
+            for (Item i:playerItems)
+            {
+                System.out.println(i);
+            }
+        }
+        public String getItemName(int integer){
+            return playerItems.get(integer).getName();
+        }
+    public void addItem(Item i){
+        playerItems.add(i);
+    }
+    public void removeItem(String s){
+        for(Item i:playerItems)
+        {
+            if (i.getName().equals(s))
+            {
+                playerItems.remove(i);
+            }
+            
+        }
+    }
+    public int getSize(){
+        return playerItems.size();
+    }
+    public String toString()
+    {
+        String str = "";
+        for (Item i: playerItems){
+            str += i.toString();
+        }
+        return str;
+    }    
+}
