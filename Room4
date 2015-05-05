@@ -1,0 +1,43 @@
+import java.util.*;
+
+public class Room4 extends Room
+{
+	private ArrayList<String> roomItems4 = new ArrayList<>();
+	private boolean locked = true;
+	public Room4(int num)
+	{
+		super(num);
+	}
+	
+	public boolean getLocked()
+	{
+		return locked;
+	}
+	
+	public boolean setLocked(Inventory b)
+	{
+		for (int i = 0; i < b.getSize(); i++)
+		{
+			if (b.getItemName(i).equals("Great Expectations"))
+			{
+				locked = false;
+			}
+		}
+                return locked;
+	}
+	
+	public String toString()
+	{
+		String str = "";
+		if (locked == false)
+		{
+			str = "One of the bookcases swings away from the wall and You walk in the room and see a chart of a " + "\n" +
+			"piano across from you with the lowest D, G, and C circled. Interesting... You turn around and walk out." + "\n" +
+			super.toString(); 
+		}
+                else{
+                    str = "You push on the door but it doesn't budge. It must be locked.";
+                }
+		return str;
+	}
+}
