@@ -1,0 +1,15 @@
+public class Room {
+    private int roomNumber;
+	
+	public Room(int num)
+	{
+		roomNumber = num;
+	}
+	
+	public String toString()
+	{
+		String str;
+		str = "Room Number: " + roomNumber;
+		return str;
+	}
+}
