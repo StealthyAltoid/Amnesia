@@ -1,0 +1,15 @@
+import java.util.*;
+public class Hall1 extends Room{
+    private int num = 0;
+    private Scanner keyboard = new Scanner(System.in);
+    public Hall1(int num){
+        super(num);
+    }
+    public int Enter(Room10 room_10, Room11 room_11, Room12 room_12){
+      toString();
+      System.out.println("");
+      System.out.println("Options...");
+      num = keyboard.nextInt();
+      return num;  
+    }
+}
