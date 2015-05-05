@@ -1,0 +1,22 @@
+import java.util.*;
+public class Room10 extends Room{
+    private ArrayList<String> roomItems10 = new ArrayList<>();
+    private int num = 0;
+    private Scanner keyboard = new Scanner(System.in);
+    public Room10(int num){
+        super(num);
+        roomItems10.add("Note3");
+    }
+    public int Enter(){
+            toString();
+            System.out.println("");
+            System.out.println("Options...");
+            num = keyboard.nextInt();
+            return num;
+        }
+    public String toString(){
+        String str = "";
+        str = " ";
+        return str;
+    }
+}
