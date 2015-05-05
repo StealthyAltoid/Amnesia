@@ -3,12 +3,27 @@ import java.util.*;
 public class Room3 extends Room
 {
 	private ArrayList<String> roomItems3 = new ArrayList<>();
+        private int num = 0;
+        private Scanner keyboard = new Scanner(System.in);
 	public Room3(int num)
 	{
 		super(num);
 		roomItems3.add("Great Expectations");
 		roomItems3.add("Floorboard");
 	}
+        public int Enter(){
+            toString();
+            System.out.println("");
+            System.out.println("Options...");
+            num = keyboard.nextInt();
+            return num;
+        }
+        public void Leave(Hall hall){
+            Room2 room_2 = new Room2(2);
+            Room3 room_3 = new Room3(3);
+            Room1 room_1 = new Room1(1);
+            hall.Enter(room_2, room_3, room_1);
+        }
 	
 	public String toString()
 	{
