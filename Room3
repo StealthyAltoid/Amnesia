@@ -1,0 +1,24 @@
+import java.util.*;
+
+public class Room3 extends Room
+{
+	private ArrayList<String> roomItems3 = new ArrayList<>();
+	public Room3(int num)
+	{
+		super(num);
+		roomItems3.add("Great Expectations");
+		roomItems3.add("Floorboard");
+	}
+	
+	public String toString()
+	{
+		String str = "";
+			str = "Books are haphazardly organized across bookcases which line each wall. The" + "\n" +
+				  "wallpaper has peeled off hangs down over the top of the bookshelves." + "\n" + 
+				  "In the center of the room is a cracked floor board that is not secure." + "\n" + "\n" +
+				  super.toString() + "\n" + 
+				  "Room Items: " +  roomItems3.get(0) + ", " + roomItems3.get(1); 
+		
+		return str;
+	}
+}
