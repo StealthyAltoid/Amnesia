@@ -5,10 +5,14 @@ public class Hall extends Room{
     public Hall(int num){
         super(num);
     }
+    
+  
+       
     public int Enter(Room2 room_2, Room3 room_3, Room1 room_1){
       toString();
-      System.out.println("");
-      System.out.println("Options...");
+      System.out.println("You are in a long corridor. Across from you is an archway leading into another" + "\n" +
+"room. You check down the hall and see that there are also rooms to your right and left.");
+      System.out.println("Options:" + "\n" + "1)Straight" + "\n" + "2)Right" + "\n" + "3)Left" + "\n" + "4)Print Inventory");
       num = keyboard.nextInt();
       return num;  
     }
