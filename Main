@@ -8,19 +8,46 @@ public class Main{
 		ArrayList<Item> mapItems;
             mapItems = new ArrayList<>();
             
+            int location = 0;
+            int Roomchoice = 0;
+            
             Inventory inventory = new Inventory();
             
+            
+            //Instantiate All Rooms
+            Room1 room_1 = new Room1(1);
+            Room2 room_2 = new Room2(2);
+            Room3 room_3 = new Room3(3);
+            Room4 room_4 = new Room4(4);
+            Room5 room_5 = new Room5(5);
+            Room6 room_6 = new Room6(6);
+            Room7 room_7 = new Room7(7);
+            Room8 room_8 = new Room8(8);
+            Room9 room_9 = new Room9(9);
+            Room10 room_10 = new Room10(10);
+            Room11 room_11 = new Room11(11);
+            Room12 room_12 = new Room12(12);
+            Room13 room_13 = new Room13(13);
+            Hall hall = new Hall(14);
+            Hall1 hall1 = new Hall1(15);
+            
+            //Instantiate all Map Items
             Item Note1 = new Item("Note 1/5", "Once in my brain, first in my boot" + "\n" +
 		"I don't like one, my favorite number is two" + "\n");
-            Item Key = new Item("Key", "This must be used to unlock something");
+            Item key = new Item("Key", "This must be used to unlock something");
             Item Herbicide = new Item("Herbicide", "To kill plants I think?");
-            Item Note2 = new Item("Note 2/5 ", " ");
-	    Item Note3 = new Item("Note 3/5", " ");
-            Item Note4 = new Item("Note 4/5", " ");
-            Item Note5 = new Item("Note 4/5", " ");
+            Item Note2 = new Item("Note 2/5 ", "I am the middle child." + "\n" + "My siblings are Otto and Mary.");
+	    Item Note3 = new Item("Note 3/5", "2 Do:" + "\n" + "Amsterdam");
+            Item Note4 = new Item("Note 4/5", "It's a dictionary page with the words rueful, run, and rut circled.");
+            Item Note5 = new Item("Note 5/5", "It appears to be from a history textbook" + "\n" +
+            	"\n" + " The XYZ affair was central to the deteriorating relationship between America and France." + "\n" + 
+            		"Blah, blah, blah.");
+            Item gun = new Item("Gun", "A revolver with several bullets");
+            Item Book = new Item("Book", "A book entitled Great Expectations");		
             
+            //Add Items to mapItems
             mapItems.add(Note1);
-            mapItems.add(Key);
+            mapItems.add(key);
             mapItems.add(Herbicide);
             mapItems.add(Note2);
             mapItems.add(Note3);
@@ -65,7 +92,7 @@ public class Main{
 
 		"A riddle... strange. Oh well, first things first: better try to get out of here.");
 			
-        Room room = new Room(1);
+        /*Room room = new Room(1);
     	System.out.println(room);     // Test for declaring Room parent class
     	
     	System.out.println("");
@@ -83,7 +110,138 @@ public class Main{
     	System.out.println(aroom);
     	
     	Room4 broom = new Room4(4);
-    	System.out.println(broom);
+    	System.out.println(broom);*/
+    	
+    	location = 14;
+    	do{
+    		if (location == 14)
+    		{
+    			Roomchoice = hall.Enter(room_2, room_3, room_1);
+    			while(Roomchoice > 4 || Roomchoice < 1){
+    				System.out.println("Not a valid choice, please choose again.");
+    				Roomchoice = keyboard.nextInt();
+  
+    			}
+    					
+    			
+    			if (Roomchoice == 1)
+    				{
+    					location = 3;
+    				}
+    			else if (Roomchoice == 2)
+    				{
+    					location = 1;	
+    				}
+    			else if (Roomchoice == 3)
+    				{
+    					location = 2;
+    				}
+    			else if (Roomchoice == 4)
+    			{
+    				System.out.println("");
+    				System.out.println("Inventory");
+    				System.out.println("------------");
+    				System.out.println(inventory);
+    				System.out.println("------------");
+    			}	
+    			
+    		}
+    		if (location == 1)
+    		{
+    			Roomchoice = 0;
+    			System.out.println("");
+    			System.out.println(room_1);
+    			Roomchoice = room_1.Enter();
+    			while(Roomchoice > 5 || Roomchoice < 0){
+    				System.out.println("Not a valid choice, please choose again.");
+    				Roomchoice = keyboard.nextInt();
+  
+    			}
+    			if (room_1.getLocked() == true){
+    				location = 14;
+    			}
+    			else if(Roomchoice == 1)
+    			{
+    				if (room_1.getSize() > 0)
+    				{
+    					room_1.takeGun();
+    					inventory.addItem(gun);
+    				}
+    				else{
+    					System.out.println("I've already taken everything in here.");
+    				}
+    			}
+    			else if(Roomchoice == 2)
+    			{
+    				System.out.println("You scrounge around in the papers but find nothing.");
+    			}
+    			else if(Roomchoice == 3)
+    			{
+    				System.out.println("You bend down and peer into the hole. It is too dark to see anything" + "\n" +
+    					"and the smell is awful.");
+    			}
+    			else if(Roomchoice == 4)
+    			{
+    				location = 14;
+    			}
+    			else if (Roomchoice == 5)
+    			{
+    				System.out.println("");
+    				System.out.println("Inventory");
+    				System.out.println("------------");
+    				System.out.println(inventory);
+    				System.out.println("------------");
+    			}	
+    		}
+    		if (location == 2)
+    		{
+    			System.out.println("");
+    			System.out.println(room_2);
+    			Roomchoice = room_2.Enter();
+    			while(Roomchoice > 4 || Roomchoice < 1){
+    				System.out.println("Not a valid choice, please choose again.");
+    				Roomchoice = keyboard.nextInt();
+  
+    			}
+    			if (Roomchoice == 1)
+    			{
+    				if (room_2.getSize() > 0){
+    					System.out.println("You search the boxes and find nothing but a strange note that reads: " + "\n" +
+    					Note4.getDescription());
+    					room_2.takeNote();
+    					inventory.addItem(Note4);
+    				}
+    				else{
+    					System.out.println("I've already taken everything in here.");
+    				}
+    				
+    					
+    			}
+    			else if (Roomchoice == 2)
+    			{
+    				location = 5;
+    			}
+    			else if (Roomchoice == 3)
+    			{
+    				location = 14;
+    			}
+    			else if (Roomchoice == 5)
+    			{
+    				System.out.println(inventory);
+    			}
+    		}
+    		if (location == 3)
+    		{
+    			for (Item i:Inventory inventory)
+    			{
+    				if (i.getName.equals("Book"))
+    				{
+    					location = 4;
+    				}
+    			}
+    		}
+    			
+    	}while(location != 9);
     	
     }
 }
