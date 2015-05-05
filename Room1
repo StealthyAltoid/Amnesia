@@ -2,7 +2,7 @@ import java.util.*;
 public class Room1 extends Room
 {
 	private ArrayList<String> roomItems1 = new ArrayList<>();
-	private boolean locked = true;
+	private boolean locked = false;
 	private int num = 0;
         private Scanner keyboard = new Scanner(System.in);
 	public Room1(int num)
@@ -11,11 +11,13 @@ public class Room1 extends Room
 		roomItems1.add("gun");
 	}
         public int Enter(){
-            toString();
             System.out.println("");
-            System.out.println("Options...");
-            num = keyboard.nextInt();
-            return num;
+            if(locked == false){
+            	 System.out.println("Options:" + "\n" + "1)Look in the Chest" + "\n" + "2)Search the Papers" + "\n" +
+            	"3)Investigate Rat Hole" + "\n" + "4)Leave" + "\n" + "5)Print Inventory");
+            	num = keyboard.nextInt();
+            }
+           return num;
         }
         public void Leave(Hall hall){
             Room2 room_2 = new Room2(2);
@@ -23,7 +25,20 @@ public class Room1 extends Room
             Room1 room_1 = new Room1(1);
             hall.Enter(room_2, room_3, room_1);
         }
-	
+    public void takeGun()
+    {
+    	System.out.println("You open up the chest and find a revolver! What is this doing here?" + "\n" +
+    		"You carry it nervously in your hand.");
+    	roomItems1.remove(0);
+    }
+    public int getSize(){
+    	return roomItems1.size();
+    }    
+      
+	public boolean getLocked()
+	{
+		return locked;
+	}
 	public String toString()
 	{
 		String str = "";
@@ -41,7 +56,7 @@ public class Room1 extends Room
 										 "You look around and see this room appears to have been used as an office." + "\n" + 
 										 "Papers are strewn about the floor and across the desk that occupies one corner." + "\n" +
 										 "Underneath the desk is a wornout chest." + "\n" + "\n" +
-										 super.toString() + "\n" + "Room Items: " +  roomItems1.get(i);
+										 super.toString();
 				
 			}
 		}
