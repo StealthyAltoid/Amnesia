@@ -24,6 +24,7 @@ public class Room3 extends Room
             Room1 room_1 = new Room1(1);
             hall.Enter(room_2, room_3, room_1);
         }
+        
 	
 	public String toString()
 	{
@@ -31,8 +32,7 @@ public class Room3 extends Room
 			str = "Books are haphazardly organized across bookcases which line each wall. The" + "\n" +
 				  "wallpaper has peeled off hangs down over the top of the bookshelves." + "\n" + 
 				  "In the center of the room is a cracked floor board that is not secure." + "\n" + "\n" +
-				  super.toString() + "\n" + 
-				  "Room Items: " +  roomItems3.get(0) + ", " + roomItems3.get(1); 
+				  super.toString();
 		
 		return str;
 	}
