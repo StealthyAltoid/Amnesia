@@ -1,0 +1,24 @@
+import java.util.*;
+public class Room2 extends Room
+{
+	private ArrayList<String> roomItems2 = new ArrayList<>();
+	
+	public Room2(int num)
+	{
+		super(num);
+		roomItems2.add("note4");
+	}
+	
+	public String toString()
+	{
+		String str = "";
+		for (int i = 0; i < roomItems2.size(); i++)
+			{
+				str = "There's nothing here except a few moving boxes. At one end though, you notice a" + "\n" +
+					  "staircase that goes down." + "\n" + "\n" +
+					  super.toString() + "\n" + 
+					  "Room Items: " +  roomItems2.get(i);
+			}
+		return str;
+	}
+}
