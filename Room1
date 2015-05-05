@@ -1,0 +1,36 @@
+import java.util.*;
+public class Room1 extends Room
+{
+	private ArrayList<String> roomItems1 = new ArrayList<>();
+	private boolean locked = true;
+	
+	public Room1(int num)
+	{
+		super(num);
+		roomItems1.add("gun");
+	}
+	
+	public String toString()
+	{
+		String str = "";
+		if (locked == true)
+		{
+			str = "The door is locked.";
+		}
+		else
+		{
+			 
+			for (int i = 0; i < roomItems1.size(); i++)
+			{
+				str = 
+										 "A rat scurries over your foot and into a hole in the wall." + "\n" + 
+										 "You look around and see this room appears to have been used as an office." + "\n" + 
+										 "Papers are strewn about the floor and across the desk that occupies one corner." + "\n" +
+										 "Underneath the desk is a wornout chest." + "\n" + "\n" +
+										 super.toString() + "\n" + "Room Items: " +  roomItems1.get(i);
+				
+			}
+		}
+		return str;
+	}
+}
