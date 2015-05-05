@@ -1,0 +1,89 @@
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
+import java.util.*;
+
+public class Main{
+	public static void main(String args[]) throws IOException {
+		ArrayList<Item> mapItems;
+            mapItems = new ArrayList<>();
+            
+            Inventory inventory = new Inventory();
+            
+            Item Note1 = new Item("Note 1/5", "Once in my brain, first in my boot" + "\n" +
+		"I don't like one, my favorite number is two" + "\n");
+            Item Key = new Item("Key", "This must be used to unlock something");
+            Item Herbicide = new Item("Herbicide", "To kill plants I think?");
+            Item Note2 = new Item("Note 2/5 ", " ");
+	    Item Note3 = new Item("Note 3/5", " ");
+            Item Note4 = new Item("Note 4/5", " ");
+            Item Note5 = new Item("Note 4/5", " ");
+            
+            mapItems.add(Note1);
+            mapItems.add(Key);
+            mapItems.add(Herbicide);
+            mapItems.add(Note2);
+            mapItems.add(Note3);
+            mapItems.add(Note4);
+            mapItems.add(Note5);
+            
+            inventory.addItem(Note1);
+            
+            inventory.toString();
+      
+            /*for (int i = 0; i < mapItems.size(); i++){    // Test to print contents of mapItems array
+                System.out.println(mapItems.get(i));
+            }*/
+                
+            
+		Scanner keyboard = new Scanner(System.in);
+		int choice = 0;
+		
+		System.out.println("Welcome to...");
+   		BufferedReader br = new BufferedReader(new FileReader("title2.txt"));     // Displays Title Screen
+    	for (String line; (line = br.readLine()) != null;) {
+    			System.out.println(line);		
+        }
+        System.out.println("");
+        System.out.println("Press 1 to begin...");
+        do 
+        {
+        	System.out.print("");
+        	choice = keyboard.nextInt();
+        }while (choice != 1);
+        
+        System.out.println("");
+        
+        System.out.println("You wake up in a musty, dimly lit room. Your head throbs and you are slumped" + "\n" +
+		"against one corner. All you can see is a single door set into the wall across" + "\n" + 
+		"from you. You struggle to remember how you got here but can't. Not only that," + "\n" +        //What is printed when you wake up
+		"you can't seem to recall anything... not even your name. You fish around in your" +                     
+		"pocket and find a note that reads:" + "\n" + "\n" +
+
+		"Once in my brain, first in my boot" + "\n" +
+		"I don't like one, my favorite number is two" + "\n" + "\n" +  
+
+		"A riddle... strange. Oh well, first things first: better try to get out of here.");
+			
+        Room room = new Room(1);
+    	System.out.println(room);     // Test for declaring Room parent class
+    	
+    	System.out.println("");
+    	Room1 roomba = new Room1(1);
+    	System.out.println(roomba);    // Test for Room1
+    	
+    	System.out.println("");
+    	
+    	Room2 roomie = new Room2(2);  // Test for Room2
+    	System.out.println(roomie);
+    	
+    	System.out.println("");
+    	
+    	Room3 aroom = new Room3(3);
+    	System.out.println(aroom);
+    	
+    	Room4 broom = new Room4(4);
+    	System.out.println(broom);
+    	
+    }
+}
