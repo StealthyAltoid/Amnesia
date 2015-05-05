@@ -4,6 +4,8 @@ public class Room4 extends Room
 {
 	private ArrayList<String> roomItems4 = new ArrayList<>();
 	private boolean locked = true;
+        private int num = 0;
+        private Scanner keyboard = new Scanner(System.in);
 	public Room4(int num)
 	{
 		super(num);
@@ -13,6 +15,13 @@ public class Room4 extends Room
 	{
 		return locked;
 	}
+        public int Enter(){
+            toString();
+            System.out.println("");
+            System.out.println("Options...");
+            num = keyboard.nextInt();
+            return num;
+        }
 	
 	public boolean setLocked(Inventory b)
 	{
