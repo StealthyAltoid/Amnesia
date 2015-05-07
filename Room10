@@ -7,16 +7,37 @@ public class Room10 extends Room{
         super(num);
         roomItems10.add("Note3");
     }
+    public void takeNote(){
+        roomItems10.remove(0);
+    }
     public int Enter(){
-            toString();
-            System.out.println("");
-            System.out.println("Options...");
-            num = keyboard.nextInt();
+            if(roomItems10.size() > 0){
+                System.out.println("");
+                System.out.println("Options:" + "\n" + "1)Investigate Charts" + "\n" + "2)Take Note" + "\n" + "3)Leave" + "\n" + "4)Print Inventory");
+                num = keyboard.nextInt();
+            }
+            else{
+                  System.out.println("");
+                  System.out.println("Options:" + "\n" + "1)Investigate Charts" + "\n" + "3)Leave" + "\n" + "4)Print Inventory");
+                  num = keyboard.nextInt();
+            }
+            
             return num;
         }
+    public int getSize(){
+        return roomItems10.size();
+    }
     public String toString(){
         String str = "";
-        str = " ";
+        if (roomItems10.size() > 0){
+            str = "You step into a study with charts on every wall. Tacked up on one is a map of Europe" + "\n" +
+                "A sticky note is attached to the map.";
+        }
+        else{
+            str = "You step into a study with charts on every wall. Tacked up on one is a map of Europe.";
+        }
+        
         return str;
     }
 }
+
