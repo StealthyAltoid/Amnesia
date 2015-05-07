@@ -1,22 +1,22 @@
 import java.util.*;
-public class Room10 extends Room{
-    private ArrayList<String> roomItems10 = new ArrayList<>();
+public class Room6 extends Room{
+    private ArrayList<String> roomItems6 = new ArrayList<>();
     private int num = 0;
     private Scanner keyboard = new Scanner(System.in);
-    public Room10(int num){
+    public Room6(int num){
         super(num);
-        roomItems10.add("Note3");
+        roomItems6.add("Stairs");
     }
     public int Enter(){
-            toString();
             System.out.println("");
-            System.out.println("Options...");
+            System.out.println("Options:" + "\n" + "1)Take the Stairs" + "\n" + "2)Leave" + "\n" + "3)Print Inventory");
             num = keyboard.nextInt();
             return num;
-        }
+    }
     public String toString(){
         String str = "";
-        str = " ";
+        str = "The room appears to be only a landing for a long, spiral staircase" + "\n" + 
+                "which descends even further";
         return str;
     }
 }
