@@ -8,15 +8,35 @@ public class Room7 extends Room{
         roomItems7.add("Key");
     }
     public int Enter(){
-            toString();
-            System.out.println("");
-            System.out.println("Options...");
-            num = keyboard.nextInt();
-            return num;
+            if(roomItems7.size() > 0){
+                System.out.println("");
+                System.out.println("Options:" + "\n" + "1) Search trash" + "\n" + "2)Take key" + "\n" + "3)Leave" + "\n" +
+                    "4) Print Inventory");
+                num = keyboard.nextInt();
+            
+            }
+            else{
+                System.out.println("");
+                System.out.println("Options:" + "\n" + "1) Search trash" + "\n" + "3)Leave" + "\n" +
+                    "4) Print Inventory");
+                num = keyboard.nextInt();
+            }
+         return num;   
         }
+    public void takeKey()
+        {
+            System.out.println("You grab the key off the ring and stick it in your pocket.");
+            roomItems7.remove(0);
+        }
+    public int getSize(){
+        return roomItems7.size();
+    }
     public String toString(){
         String str = "";
-        str = " ";
+        str = "This is a hoarder's paradise. Every knick-knack concievable fills the room.";
+        if(roomItems7.size() > 0){
+            str += "Just beside the door frame you notice a key ring with a single key looped over the end.";
+        }
         return str;
     }
 }
