@@ -6,10 +6,16 @@ public class Hall1 extends Room{
         super(num);
     }
     public int Enter(Room10 room_10, Room11 room_11, Room12 room_12){
-      toString();
       System.out.println("");
-      System.out.println("Options...");
+      System.out.println("Options:" + "\n" + "1)Go left" + "\n" + "2)Go right" + "\n" + "3)Go around the corner" + "\n" +
+              "4)Leave" + "\n" + "5)Print Inventory");
       num = keyboard.nextInt();
       return num;  
+    }
+    public String toString(){
+        String str = "";
+        str = "You find yourself in another long hallway with three rooms.One room is to your right," + "\n" + 
+                "one is to your left, and one is around the corner.";
+        return str;
     }
 }
