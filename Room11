@@ -15,9 +15,22 @@ public class Room11 extends Room{
             num = keyboard.nextInt();
             return num;
         }
+    public void takeHerbicide(){
+        roomItems11.remove(0);
+    }
+    public int getSize()
+    {
+        return roomItems11.size();
+    }
     public String toString(){
         String str = "";
-        str = " ";
+        if(roomItems11.size() > 0){
+            str = "This is a brightly lit room with a singular table in the middle. On top of the table" + "\n" +
+                "is a can of herbicide, glistening like a trophy. You pocket the herbicide and walk back out.";
+        }
+        else{
+            str = "There's really nothing left here. You shut the door.";
+        }
         return str;
     }
 }
