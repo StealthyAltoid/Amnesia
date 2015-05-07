@@ -12,7 +12,7 @@ public class Room2 extends Room
         public int Enter(){
             System.out.println("");
             System.out.println("Options:" + "\n" + "1)Search the boxes" + "\n" + "2)Take the Stairs" + "\n" +
-            	"3)Leave" + "\n" + "4)Inventory");
+            	"3)Leave" + "\n" + "4)Print Inventory");
             num = keyboard.nextInt();
             return num;
         }
