@@ -2,7 +2,7 @@ import java.util.*;
 public class Room1 extends Room
 {
 	private ArrayList<String> roomItems1 = new ArrayList<>();
-	private boolean locked = false;
+	private boolean locked = true;
 	private int num = 0;
         private Scanner keyboard = new Scanner(System.in);
 	public Room1(int num)
@@ -25,20 +25,24 @@ public class Room1 extends Room
             Room1 room_1 = new Room1(1);
             hall.Enter(room_2, room_3, room_1);
         }
-    public void takeGun()
-    {
-    	System.out.println("You open up the chest and find a revolver! What is this doing here?" + "\n" +
+        public void takeGun()
+        {
+            System.out.println("You open up the chest and find a revolver! What is this doing here?" + "\n" +
     		"You carry it nervously in your hand.");
-    	roomItems1.remove(0);
-    }
-    public int getSize(){
-    	return roomItems1.size();
-    }    
+            roomItems1.remove(0);
+        }
+        public int getSize(){
+            return roomItems1.size();
+        }    
       
 	public boolean getLocked()
 	{
 		return locked;
 	}
+        public boolean setLocked(boolean b){
+            locked = b;
+            return locked;
+        }
 	public String toString()
 	{
 		String str = "";
