@@ -12,7 +12,6 @@ public class Room3 extends Room
 		roomItems3.add("Floorboard");
 	}
         public int Enter(){
-            toString();
             System.out.println("");
             System.out.println("Options...");
             num = keyboard.nextInt();
