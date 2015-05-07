@@ -16,9 +16,9 @@ public class Room4 extends Room
 		return locked;
 	}
         public int Enter(){
-            toString();
             System.out.println("");
-            System.out.println("Options...");
+            System.out.println("Options:" + "\n" + "1)Investigate the Bookshelves" + "\n" + "2)Check the floorboard" + "\n" + "3)Leave" + "\n" +
+                    "4)Print Inventory");
             num = keyboard.nextInt();
             return num;
         }
@@ -40,7 +40,7 @@ public class Room4 extends Room
 		String str = "";
 		if (locked == false)
 		{
-			str = "One of the bookcases swings away from the wall and You walk in the room and see a chart of a " + "\n" +
+			str = "You walk in the room and see a chart of a " + "\n" +
 			"piano across from you with the lowest D, G, and C circled. Interesting... You turn around and walk out." + "\n" +
 			super.toString(); 
 		}
