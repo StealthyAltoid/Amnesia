@@ -14,9 +14,21 @@ public class Room8 extends Room{
             num = keyboard.nextInt();
             return num;
         }
+    public void removeVines(){
+        roomItems8.remove(0);
+    }
     public String toString(){
         String str = "";
-        str = " ";
+        if (roomItems8.size() > 0){
+            str = "You step into the room and are suddenly grabbed by a large viny plant" + "\n" +
+                    "covering every wall! You struggle to get loose and eventually wrest yourself free," + "\n" +
+                    "slamming the door on the way out.";
+        }
+        else{
+            str = "You step into the room and quickly whip out the herbicide, spraying it all around you." + "\n" +
+                    "The malicious vines quickly turn brown and wither lifelessly, dropping a hefty book" + "\n" +
+                    "in the center of the room. You grab the paper and walk out.";
+        }
         return str;
     }
 }
