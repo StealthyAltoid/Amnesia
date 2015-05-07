@@ -14,9 +14,20 @@ public class Room13 extends Room{
             num = keyboard.nextInt();
             return num;
         }
+    public int getSize(){
+        return roomItems13.size();
+    }
+    public void killZombie(){
+        roomItems13.remove("Zombie");
+    }
     public String toString(){
         String str = "";
-        str = " ";
+        if(roomItems13.size() > 0){
+            str = "A corpse rises from a corner of the room and begins to shuffle toward you!";
+        }
+        else{
+            str = "There's nothing left here but a fully dead zombie. You turn around and walk out.";
+        }
         return str;
     }
 }
