@@ -8,15 +8,19 @@ public class Room5 extends Room{
     roomItems5.add("Piano");
 }
     public int Enter(){
-            toString();
             System.out.println("");
-            System.out.println("Options...");
+            System.out.println("Options:" + "\n" + "1)Play the piano" + "\n" + "2)Search the beer cans" + "\n" +
+                    "3)Investigate the bones" + "\n" + "4)Go to purple door" + "\n" + "5) Go to green door" + "\n" +
+                    "6)Go to blue door" + "\n" + "7)Leave" + "\n" + "8)Print Inventory");
             num = keyboard.nextInt();
             return num;
         }
     public String toString(){
         String str = "";
-        str = "   ";
+        str = "You find yourself in a large chamber that looks more like part of a warehouse than a basement. " + "\n" + 
+                "Crumpled beer cans are stacked in a mountain in the center of the room and chicken bones occupy" + "\n" + 
+                "one corner. Up against the wall is a crumbling grand piano. You also notice doors to three other rooms:" + "\n" +
+                "one with a purple door, one with a green, and one with a blue.";
         return str;
     }
                 
