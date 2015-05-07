@@ -7,16 +7,24 @@ public class Room12 extends Room{
         super(num);
         roomItems12.add("Note2");
     }
+    public void takeNote(){
+        roomItems12.remove(0);
+    }
+    public int getSize()
+    {
+        return roomItems12.size();
+    }
     public int Enter(){
-            toString();
-            System.out.println("");
-            System.out.println("Options...");
-            num = keyboard.nextInt();
-            return num;
+            
+                System.out.println("");
+                System.out.println("Options:" + "\n" + "1)Search desk" + "\n" + "2)Take Stairs" + "\n" + "3)Leave" + "\n" + "4)Print Inventory");
+                num = keyboard.nextInt();
+                return num;
         }
     public String toString(){
         String str = "";
-        str = " ";
+        str = "Another office-like room with a desk that has a few scalpels, journals, and loose paper strewn across it." + "\n" +
+                "Across from you appears to be yet another stairwell.";
         return str;
     }
 }
